@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gioi Thieu</title>
+  <link rel="stylesheet" href="../HTML/Header+Footer.css">
+  <link rel="stylesheet" href="../HTML/PageGioiThieu_1.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+        /* Sliding animation for images inside .section */
+        @keyframes slideLeftRight {
+            0%, 100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        .section img {
+            animation: slideLeftRight 4s ease-in-out infinite;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+        }
+
+            .section img:hover {
+                box-shadow: 0 8px 20px rgba(255, 92, 141, 0.7);
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="topbar">
+        <div class="container">
+            <div class="logo">
+                <img class="logo-shadow" src="../HTML/ảnh/logo_Hunmyi.jpg" alt="Logo" />
+                <span><strong>HUNMYI</strong><small>.com</small></span>
+
+            </div>
+            <div class="menu">
+                <a href="../HTML/HomePage_3.html" class="menubox">Trang chủ</a>
+                <a href="../HTML/Products_1.html" class="menubox">Sản phẩm</a>
+                <a href="../HTML/PageGioiThieu_1.html" class="menubox">Giới thiệu</a>
+                <a href="../HTML/FormLienHe.html" class="menubox">Liên hệ</a>
+            </div>
+            <div class="header-icons">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Bạn tìm gì...">
+                </div>
+                <a class="icon" href="../HTML/FormMuaHang_3.html" class="icon">🛒</a>
+                <span class="icon">👤</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <header class="header_1">
+      <h1>Chào mừng đến với 𝓗𝓾𝓷𝓶𝔂𝓲.𝓬𝓸𝓶</h1>
+      <p class="main_p">Nơi bạn có thể thỏa sức gacha các nhân vật bạn yêu thích đến từ nhiều thể loại anime, game</p>
+    </header>
+  
+    <div class="section no-effect">
+      <img src="../HTML/ảnh/gioithieu1.jpg" alt="Giới thiệu chung" />
+      <div class="section-content">
+        <h2>Giới Thiệu Chung</h2>
+        <p>Hunmyi - Nơi ...</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="../HTML/ảnh/gioithieu2.jpg" alt=" Chất Lượng Sản Phẩm" />
+      <div class="section-content">
+        <h2> Chất Lượng Sản Phẩm</h2>
+        <p>Sản phẩm... </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="../HTML/ảnh/gioithieu3.png" alt="Chất lượng phòng" />
+      <div class="section-content">
+        <h2>Mẫu Mã Đa Dạng</h2>
+        <p>Mẫu mã...</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="../HTML/ảnh/gioithieu4.jpg" alt="Dịch vụ khách sạn" />
+      <div class="section-content">
+        <h2>Quà Tặng Vô Vàn</h2>
+        <p>Quà tặng...</p>
+      </div>
+    </div>
+
+    <script>
+      const boxes = document.querySelectorAll('.section:not(.no-effect)'); // Lấy tất cả các phần tử .box
+      window.addEventListener('scroll', () => 
+      {
+        boxes.forEach(box => 
+        { // Lặp qua từng .box
+          const rect = box.getBoundingClientRect(); // Lấy vị trí của box trong cửa sổ trình duyệt
+
+          // Nếu top của phần tử nằm trong vùng nhìn thấy (viewport), thêm class .show
+          if (rect.top < window.innerHeight - 50) 
+          {
+            box.classList.add('show');
+          }
+        });
+      });
+    </script>
+
+  
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Humyi | Địa chỉ: Hà Nội | Hotline: 0123 456 789</p>
+    </footer>
+  </body>
+</html>

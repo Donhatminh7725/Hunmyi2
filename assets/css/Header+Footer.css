@@ -1,0 +1,144 @@
+﻿/* Thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 80px; /* Giảm xuống phù hợp với chiều cao mới của header */
+}
+
+/* Header cố định */
+.topbar {
+    background-color: #8cca46;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: -60px;
+}
+
+.logo img {
+    width: 85px;
+    height: 70px;
+}
+.logo-shadow {
+    width: 60px;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    background-color:whitesmoke;
+}
+
+.logo span {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #8cca46;
+    padding: 5px;
+    gap: 15px;
+    padding-left: 70px;
+    margin-right: auto;
+}
+
+.menubox {
+    padding: 10px 15px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-radius: 8px;
+    background-color: white;
+    color: #8cca46;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+    .menubox:hover {
+        background-color: #34b23d;
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    margin-right: -50px;
+}
+
+.header-icons input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.icon {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 25px;
+    text-decoration: none;
+}
+    .icon:hover{
+        transform: scale(1.25);
+        transition: all 0.3s ease;
+    }
+
+.search-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 10px 12px 10px 36px; /* padding-left để chừa chỗ cho icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}

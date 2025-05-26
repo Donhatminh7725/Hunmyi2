@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mua Hàng</title>
+    <link rel="stylesheet" href="../HTML/Header+Footer.css">
+    <link rel="stylesheet" href="../HTML/FormMuaHang_3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="page-container">
+    <!-- Header -->
+    <header class="topbar">
+        <div class="container">
+            <div class="logo">
+                <img class="logo-shadow" src="../HTML/ảnh/logo_Hunmyi.jpg" alt="Logo" />
+                <span><strong>HUNMYI</strong><small>.com</small></span>
+            </div>
+            <div class="menu">
+                <a href="../HTML/HomePage_3.html" class="menubox">Trang chủ</a>
+                <a href="../HTML/Products_1.html" class="menubox">Sản phẩm</a>
+                <a href="../HTML/PageGioiThieu_1.html" class="menubox">Giới thiệu</a>
+                <a href="../HTML/FormLienHe.html" class="menubox">Liên hệ</a>
+            </div>
+            <div class="header-icons">
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Bạn tìm gì...">
+                </div>
+                <a class="icon" href="../HTML/FormMuaHang_3.html">🛒</a>
+                <span class="icon">👤</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="order-form">
+            <h2>Mua Hàng</h2>
+            <div class="form-group">
+                <label for="fullname">Họ và tên <span>*</span></label>
+                <input type="text" id="fullname" required placeholder="Nguyễn Văn A">
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại <span>*</span></label>
+                <input type="text" id="phone" pattern="\d*" required placeholder="037 xxx xxxx" maxlength="10">
+            </div>
+            <div class="form-group">
+                <label for="date">Ngày đặt hàng <span>*</span></label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ nhận hàng</label>
+                <input type="text" id="address">
+            </div>
+            <div class="form-group">
+                <label for="product">Hàng xác nhận mua</label>
+                <select id="product" onchange="updatePrice()">
+                    <option value="">-- Chọn sản phẩm --</option>
+                    <option value="Pin Gỗ 4cm" data-price="40000">Pin Gỗ 4cm</option>
+                    <option value="Mochi Story banner A" data-price="30000">Mochi Story banner A</option>
+                    <option value="StyleDoll HSR" data-price="35000">StyleDoll HSR</option>
+                    <option value="Keyring MIX 24.1" data-price="30000">Keyring MIX 24.1</option>
+                    <option value="Card GI" data-price="22000">Card GI</option>
+                    <option value="Sticker Baby GI" data-price="15000">Sticker Baby GI</option>
+                    <option value="Lót ly vải Blue Lock" data-price="30000">Lót ly vải Blue Lock</option>
+                    <option value="Phonecharm 3cm" data-price="30000">Phonecharm 3cm</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Số lượng</label>
+                <input type="number" id="quantity" value="1" min="1" onchange="calculateTotal()">
+            </div>
+            <div class="form-group">
+                <label for="price">Đơn giá (VND)</label>
+                <input type="text" id="price" readonly>
+            </div>
+            <div class="form-group">
+                <label for="total">Tổng tiền (VND)</label>
+                <input type="text" id="total" readonly>
+            </div>
+            <div class="submit-btn">
+                <button onclick="submitForm1()" style="margin-right: 250px;">Trở về</button>
+                <button onclick="submitForm2()">Xác nhận</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Hunmyi | Địa chỉ: Hà Nội | Hotline: 0123 456 789</p>
+    </footer>
+
+    <script>
+        function updatePrice() {
+            const product = document.getElementById('product');
+            const selected = product.options[product.selectedIndex];
+            const price = selected.getAttribute('data-price');
+            document.getElementById('price').value = price || '';
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const price = parseInt(document.getElementById('price').value || 0);
+            const quantity = parseInt(document.getElementById('quantity').value || 1);
+            const total = price * quantity;
+            document.getElementById('total').value = total;
+        }
+
+        function submitForm1() {
+            window.location.href = "../HTML/HomePage_3.html";
+        }
+
+        function submitForm2() {
+            alert('Đơn hàng đã được xác nhận!');
+        }
+    </script>
+    
+</body>
+</html>
