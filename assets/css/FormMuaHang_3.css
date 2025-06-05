@@ -10,7 +10,7 @@ body {
     padding-top: 80px; /* Giảm xuống phù hợp với chiều cao mới của header */
 }
 
-/* Dùng Grid layout để chia vùng */
+/* Dùng Grid để chia vùng */
 .page-container {
     display: grid;
     grid-template-rows: auto 1fr auto; /* header - main - footer */
